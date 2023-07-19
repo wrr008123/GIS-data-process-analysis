@@ -4,6 +4,12 @@ import os
 import numpy as np
 import rasterio
 
+"""
+基于像元的长时序数据缺失率计算
+
+假如一共有20景数据，那么对于某一个像元而言，这个像元位置其中有12景的值为nodata，那么该像元的缺失率为 12/20
+
+"""
 
 def listdir(dir, pat):
     dirs = os.listdir(dir)
@@ -40,7 +46,7 @@ def write_result(output_path, data, template, dtype):
 if __name__ == '__main__':
     template_ras = rasterio.open(r'C:\Users\wrr\Documents\Tencent Files\1148200541\FileRecv\SG\SG_001.tif')
     raster_data = read_tifs(r"C:\Users\wrr\Documents\Tencent Files\1148200541\FileRecv\SG")
-    output_path = r'C:\Users\wrr\Desktop\222100090356-王仁儒\sg.tif'
+    output_path = r'C:\Users\wrr\Desktop\222100090356\sg.tif'
 
     missing_pixels = np.isnan(raster_data)
     missing_ratio = np.mean(missing_pixels, axis=-1)
