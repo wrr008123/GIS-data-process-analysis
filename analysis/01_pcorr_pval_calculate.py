@@ -119,7 +119,6 @@ for i in range(y_imgs.shape[0]):
         pbar.update(1)
 pbar.close()
 
-# todo write p_corr_img
 for i in range(len(_p_corr_out_frame_list)):
     out_img_arr = _p_corr_out_frame_list[i]
     ele_name = element_names[i]
