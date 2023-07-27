@@ -20,6 +20,7 @@ template_raster = r'D:\project\wrr\data_npp\基础数据_对齐_贵州\01_npp\20
 
 r = rasterio.open(template_raster)
 template_transform = r.transform
+template_crs = r.crs
 template_height = r.height
 template_width = r.width
 r.close()
@@ -56,7 +57,7 @@ def _save_img(image_save_path, img_arr):
             width=template_width,
             count=1,
             dtype=img_arr.dtype,
-            crs='+proj=latlong',
+            crs=template_crs,
             nodata=np.nan,
             transform=template_transform,
     ) as dst:
