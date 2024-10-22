@@ -72,8 +72,8 @@ class TiandituLonLatTile2TifConverter:
         lon_step = 360 / (2 ** z)
 
         # 计算纬度和经度
-        lat = 90 - (num_row_idx + 1) * lat_step
-        lon = num_col_idx * lon_step - 180
+        lat = 90 - num_row_idx * lat_step
+        lon = -180 + num_col_idx * lon_step
 
         return lon, lat
 
