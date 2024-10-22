@@ -6,6 +6,9 @@ from PIL import Image
 from rasterio.crs import CRS
 from tqdm import tqdm
 
+"""
+公式原理参考：https://blog.csdn.net/snowfallxuan/article/details/122391512
+"""
 
 class TiandituLonLatTile2TifConverter:
     def __init__(self, crs=CRS.from_epsg(4490), tile_size=(256, 256)):
