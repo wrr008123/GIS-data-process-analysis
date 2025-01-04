@@ -1,4 +1,11 @@
 import os
+
+"""
+可能会报proj_create_from_database: Cannot find proj.db的错误，如果报了请修改下面这行
+"""
+# os.environ['PROJ_LIB'] = r"D:\Users\GIS3406\miniconda3\Lib\site-packages\osgeo\data\proj"
+
+
 import fnmatch
 import numpy as np
 import rasterio
